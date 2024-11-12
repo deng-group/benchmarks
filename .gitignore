@@ -1,0 +1,7 @@
+MACE/logs
+MACE/md
+MACE/results
+MACE/*.model
+nohup.out
+MACE/*.log
+MACE/*.txt
