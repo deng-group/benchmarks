@@ -1,3 +1,5 @@
+Total number of atoms: 2000
+dtype = float64
 Seed = 1234
 md exists, skip mkdir...
     imd     Etot(eV)    T(K)    stress(mean,xx,yy,zz,yz,xz,xy)(GPa)  elapsed_time(sec)
