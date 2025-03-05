@@ -38,7 +38,6 @@ def run_md(atoms,calc,seed=1234):
 
     dyn = NVTBerendsen(atoms, time_step*units.fs, temperature_K = temperature, taut=taut*units.fs, loginterval=num_interval, trajectory=None)
     dyn.attach(print_dyn, interval=num_interval)
-    dyn.attach(MDLogger(logfile=None), interval=num_interval)
 
     # run MD
     start_time = perf_counter()
