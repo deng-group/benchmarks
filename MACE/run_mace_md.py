@@ -9,6 +9,7 @@ import os, sys
 from ase.io import read
 from ase.build.supercells import make_supercell
 import numpy as np
+import argparse
 import urllib.request
 
 def run_md(atoms,calc,output_dir,output_name,seed=1234):
@@ -50,10 +51,18 @@ def run_md(atoms,calc,output_dir,output_name,seed=1234):
     print(f"    imd     Etot(eV)    T(K)    stress(mean,xx,yy,zz,yz,xz,xy)(GPa)  elapsed_time(sec)")
     dyn.run(num_md_steps)  # take 10000 steps
 
-dtype = sys.argv[1]
-seed = int(sys.argv[2])
+# Parse command line arguments
+parser = argparse.ArgumentParser(description='Run molecular dynamics simulation.')
+parser.add_argument('--dtype', type=str, help='Data type for the MACE calculator', default='float64')
+parser.add_argument('--seed', type=int, help='Random seed for the simulation', default=1234)
+parser.add_argument('--device', type=str, help='Device for the MACE calculator', default='cuda')
+args = parser.parse_args()
+
+dtype = args.dtype
+seed = args.seed
+
 atoms = read('Na3SbS4_cubic.vasp')
-atoms = make_supercell(prim=atoms,P = [[5,0,0],[0,5,0],[0,0,5]])
+atoms = make_supercell(prim=atoms, P=[[5, 0, 0], [0, 5, 0], [0, 0, 5]])
 print(f"Total number of atoms: {atoms.get_number_of_atoms()}")
 print(f"dtype = {dtype}")
 print(f"Seed = {seed}")
@@ -71,5 +80,5 @@ if not os.path.exists(file_name):
 else:
     print(f"{file_name} already exists.")
 
-calc = MACECalculator(model_paths='mace_agnesi_medium.model',default_dtype=dtype,device = 'cuda')
-run_md(atoms,calc,'md',f'Na3SbS4_{dtype}_{seed}',seed)
+calc = MACECalculator(model_paths='mace_agnesi_medium.model', default_dtype=dtype, device='cuda')
+run_md(atoms, calc, 'md', f'Na3SbS4_{dtype}_{seed}', seed)
