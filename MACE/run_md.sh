@@ -1,7 +1,11 @@
 #!/bin/bash
-machine_config='RTX4090'
+machine_config=$1
 
 for float in float32 float64; do
     seed=1234
-    python -u run_mace_md.py $float $seed > run_md_${machine_config}_${float}_${seed}.log
+    python -u run_mace_md.py $float $seed > benchmark_results/run_md_${machine_config}_${float}_${seed}.log
+    git add benchmark_results/run_md_${machine_config}_${float}_${seed}.log
+    git commit -m "Add benchmark results for run_md_${machine_config}_${float}_${seed}.log"
 done
+
+git push
