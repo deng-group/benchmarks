@@ -1,6 +1,8 @@
 #!/bin/bash
 machine_config=$1
 mpinp=$2
+git config --global user.name "container"
+git config --global user.email "container@container.com"
 for i in `find . -mindepth 1 -maxdepth 1 -type d ! -name 'outcars' -exec basename {} \;`
 do
         cd $i

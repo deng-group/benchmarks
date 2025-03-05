@@ -1,5 +1,6 @@
 #!/bin/bash
-
+git config --global user.name "container"
+git config --global user.email "container@container.com"
 # Try download the model if it doesn't exist
 # file_name="mace_agnesi_medium.model"
 # url="https://github.com/ACEsuit/mace-mp/releases/download/mace_mp_0b/mace_agnesi_medium.model"
