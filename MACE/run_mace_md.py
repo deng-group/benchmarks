@@ -12,7 +12,7 @@ import numpy as np
 import argparse
 import urllib.request
 
-def run_md(atoms,calc,output_dir,output_name,seed=1234):
+def run_md(atoms,calc,seed=1234):
     # Print statements
     def print_dyn():
         imd = dyn.get_number_of_steps()
@@ -22,12 +22,6 @@ def run_md(atoms,calc,output_dir,output_name,seed=1234):
         stress_ave = (stress[0]+stress[1]+stress[2])/3.0
         elapsed_time = perf_counter() - start_time
         print(f"  {imd: >3}   {etot:.3f}    {temp_K:.2f}    {stress_ave:.2f}  {stress[0]:.2f}  {stress[1]:.2f}  {stress[2]:.2f}  {stress[3]:.2f}  {stress[4]:.2f}  {stress[5]:.2f}    {elapsed_time:.3f}")
-    try:
-        os.mkdir(output_dir)
-    except FileExistsError:
-        print(f'{output_dir} exists, skip mkdir...')
-        pass
-    log_filename = f"{output_dir}/{output_name}.log"
 
     # input parameters
     time_step    = 1.0    # fsec
@@ -44,7 +38,7 @@ def run_md(atoms,calc,output_dir,output_name,seed=1234):
 
     dyn = NVTBerendsen(atoms, time_step*units.fs, temperature_K = temperature, taut=taut*units.fs, loginterval=num_interval, trajectory=None)
     dyn.attach(print_dyn, interval=num_interval)
-    dyn.attach(MDLogger(dyn, atoms, log_filename, header=True, stress=True, peratom=True, mode="w"), interval=num_interval)
+    dyn.attach(MDLogger(logfile=None), interval=num_interval)
 
     # run MD
     start_time = perf_counter()
@@ -81,4 +75,4 @@ else:
     print(f"{file_name} already exists.")
 
 calc = MACECalculator(model_paths='mace_agnesi_medium.model', default_dtype=dtype, device=device)
-run_md(atoms, calc, 'md', f'Na3SbS4_{dtype}_{seed}', seed)
+run_md(atoms, calc, seed)
