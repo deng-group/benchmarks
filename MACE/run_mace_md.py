@@ -60,7 +60,7 @@ args = parser.parse_args()
 
 dtype = args.dtype
 seed = args.seed
-
+device = args.device
 atoms = read('Na3SbS4_cubic.vasp')
 atoms = make_supercell(prim=atoms, P=[[5, 0, 0], [0, 5, 0], [0, 0, 5]])
 print(f"Total number of atoms: {atoms.get_number_of_atoms()}")
@@ -80,5 +80,5 @@ if not os.path.exists(file_name):
 else:
     print(f"{file_name} already exists.")
 
-calc = MACECalculator(model_paths='mace_agnesi_medium.model', default_dtype=dtype, device='cuda')
+calc = MACECalculator(model_paths='mace_agnesi_medium.model', default_dtype=dtype, device=device)
 run_md(atoms, calc, 'md', f'Na3SbS4_{dtype}_{seed}', seed)
