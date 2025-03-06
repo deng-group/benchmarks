@@ -1,0 +1,11 @@
+cuequivariance or cuequivariance_torch is not available. Cuequivariance acceleration will be disabled.
+Total number of atoms: 2000
+dtype = float32
+Seed = 1234
+mace_agnesi_medium.model does not exist. Downloading...
+mace_agnesi_medium.model has been downloaded successfully.
+Default dtype float32 does not match model dtype float64, converting models to float32.
+    imd     Etot(eV)    T(K)    stress(mean,xx,yy,zz,yz,xz,xy)(GPa)  elapsed_time(sec)
+    0   -7392.189    800.00    -6.06  -6.08  -6.07  -6.05  -0.01  0.01  0.01    2.752
+  100   -7165.063    796.68    -7.81  -7.69  -7.93  -7.81  -0.09  0.04  -0.07    258.382
+  200   -7160.963    801.42    -7.05  -7.02  -7.09  -7.06  0.18  -0.01  0.06    552.433
