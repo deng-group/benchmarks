@@ -1,0 +1,163 @@
+hardware_specs:
+  13900kf_4090:
+    node_number: 1
+    power: 575
+    price: 4000
+    cpu: "Intel 13900K"
+    cpu_per_node: 1
+    gpu: "RTX 4090"
+    gpu_per_node: 1
+    notes: "Intel 13900K + RTX 4090 workstation"
+  14900kf-5090:
+    node_number: 1
+    power: 700
+    price: 5000
+    cpu: "Intel 14900K"
+    cpu_per_node: 1
+    gpu: "RTX 5090"
+    gpu_per_node: 1
+    notes: "Intel 14900K + RTX 5090 workstation"
+  2xgenoa_9354_128cores:
+    node_number: 2
+    power: 1400
+    price: 20000
+    cpu: "AMD Genoa 9354"
+    cpu_per_node: 2
+    gpu: "None"
+    gpu_per_node: 0
+    notes: "2x AMD Genoa 9354 server"
+  2xgenoa_9354_128cores_ncore64:
+    node_number: 2
+    power: 1400
+    price: 20000
+    cpu: "AMD Genoa 9354"
+    cpu_per_node: 2
+    gpu: "None"
+    gpu_per_node: 0
+    notes: "2x AMD Genoa 9354 server"
+  8581c_120core:
+    node_number: 1
+    power: 700
+    price: 8000
+    cpu: "Intel 8581"
+    cpu_per_node: 2
+    gpu: "None"
+    gpu_per_node: 0
+    notes: "Intel 8581 server"
+  9654_192core_gnu:
+    node_number: 1
+    power: 720
+    price: 22000
+    cpu: "AMD EPYC 9654"
+    cpu_per_node: 2
+    gpu: "None"
+    gpu_per_node: 0
+    notes: "AMD EPYC 9654x2 server"
+  9654_192core_mkl:
+    node_number: 1
+    power: 720
+    price: 22000
+    cpu: "AMD EPYC 9654"
+    cpu_per_node: 2
+    gpu: "None"
+    gpu_per_node: 0
+    notes: "AMD EPYC 9654x2 server"
+  9654_4090:
+    node_number: 1
+    power: 810
+    price: 12600
+    cpu: "AMD EPYC 9654"
+    cpu_per_node: 1
+    gpu: "RTX 4090"
+    gpu_per_node: 1
+    notes: "AMD EPYC 9654 + RTX 4090 server"
+  9654_4090-x2:
+    node_number: 1
+    power: 1260
+    price: 14200
+    cpu: "AMD EPYC 9654"
+    cpu_per_node: 1
+    gpu: "RTX 4090"
+    gpu_per_node: 2
+    notes: "AMD EPYC 9654 + 2x RTX 4090 server"
+  9654_A6000:
+    node_number: 1
+    power: 660
+    price: 16000
+    cpu: "AMD EPYC 9654"
+    cpu_per_node: 1
+    gpu: "RTX A6000"
+    gpu_per_node: 1
+    notes: "AMD EPYC 9654 + RTX A6000 workstation/server"
+  aspire2a_milan_128cores:
+    node_number: 1
+    power: 450
+    price: 6000
+    cpu: "AMD EPYC 7742"
+    cpu_per_node: 2
+    gpu: "None"
+    gpu_per_node: 0
+    notes: "AMD EPYC 7742x2 server"
+  genoa_64cores:
+    node_number: 1
+    power: 700
+    price: 10000
+    cpu: "AMD Genoa 9354"
+    cpu_per_node: 2
+    gpu: "None"
+    gpu_per_node: 0
+    notes: "2x AMD Genoa 9354x2 server"
+  genoa_96cores_9654_ntask_64_single:
+    node_number: 1
+    power: 720
+    price: 22000
+    cpu: "AMD Genoa 9654"
+    cpu_per_node: 1
+    gpu: "None"
+    gpu_per_node: 0
+    notes: "AMD Genoa 9654x2 server"
+  genoa_96cores_9654_single:
+    node_number: 1
+    power: 400
+    price: 8000
+    cpu: "AMD Genoa 9654"
+    cpu_per_node: 1
+    gpu: "None"
+    gpu_per_node: 0
+    notes: "AMD Genoa 9654x1 server"
+  intel8452Y_144cores:
+    node_number: 2
+    power: 1400
+    price: 14000
+    cpu: "Intel Xeon 8452Y"
+    cpu_per_node: 2
+    gpu: "None"
+    gpu_per_node: 0
+    notes: "2xIntel Xeon 8452Yx2 server"
+  intel8452Y_288cores:
+    node_number: 4
+    power: 2800
+    price: 11500
+    cpu: "Intel Xeon 8452Y"
+    cpu_per_node: 2
+    gpu: "None"
+    gpu_per_node: 0
+    notes: "4x Xeon 8452Yx2 server"
+  intel8452Y_72cores:
+    node_number: 1
+    power: 300
+    price: 4500
+    cpu: "Intel Xeon 8452Y"
+    cpu_per_node: 1
+    gpu: "None"
+    gpu_per_node: 0
+    notes: "Xeon 8452Yx1 72 cores server"
+  v100x4:
+    node_number: 1
+    power: 1300
+    price: 3500
+    cpu: "Unknown"
+    cpu_per_node: 1
+    gpu: "Tesla V100"
+    gpu_per_node: 4
+    notes: "4x Tesla V100 used server (very cheap now)"
