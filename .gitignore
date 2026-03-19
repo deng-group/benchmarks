@@ -1,7 +1,39 @@
-MACE/logs
-MACE/md
-MACE/results
+# Generated outputs
+*.png
+vasp_timing_analysis.csv
+
+# VASP outputs
+CONTCAR
+DOSCAR
+CHG*
+EIG*
+PRO*
+REPO*
+vasprun.xml*
+XDATCAR
+WAVECAR
+OSZICAR
+IBZKPT
+PCDAT
+vasprun.h5
+vasp.out
+
+# MACE outputs
+MACE/logs/
+MACE/md/
+MACE/results/
+MACE/benchmark_results/
 MACE/*.model
-nohup.out
 MACE/*.log
 MACE/*.txt
+MACE/mp_finetuning-*.xyz
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+
+# Misc
+nohup.out
+.DS_Store
