@@ -59,3 +59,19 @@ make mace_train
 - Intel Xeon 8452Y
 - Intel 13900K/14900K workstations
 - GPUs: RTX 4090, RTX 5090, A6000, V100
+
+## Related: cluster time-vs-cost benchmark (Oct 2026)
+
+The same VASP 6.5.1 and MACE-MPA-0 MD workloads were run on every partition available to the group —
+NUS **vanda** and **hopper**, **China HPC** (超算云平台, Inner Mongolia 2) and **fornax** — and plotted as
+wall time against cost per job, so the Pareto-optimal nodes (nothing is both faster and cheaper) stand out.
+
+![Time–cost Pareto front](https://raw.githubusercontent.com/LIMENGKE24/hpc-benchmark/main/analysis/pareto.png)
+
+- **VASP** (128-atom Na₃PS₄, 25 SCF steps): fastest = fornax EPYC 9354 node (104 s); cheapest = one China HPC V100 (138 s, 0.007 SGD/job).
+- **MACE MD** (1,024 / 3,456 atoms): fastest = fornax RTX 5090; cheapest = China HPC V100; H100/H200 match the RTX 5090 on speed at ~5× the cost per ns.
+
+Inputs, job scripts, per-run records, the cost model with sources, and a node-fault report for fornax
+(`c15`, `g01`) are in **[LIMENGKE24/hpc-benchmark](https://github.com/LIMENGKE24/hpc-benchmark)**.
+Note that fornax prices there are a public-cloud rental proxy (fornax has no chargeback), unlike the purchase
+prices used in `hardware_specs.yaml` here.
